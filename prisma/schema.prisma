@@ -9,15 +9,29 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
-model User{
-  id String @id @default(cuid())
-  username String @unique
-  email String @unique
-  password String
+model User {
+  id        String   @id @default(cuid())
+  username  String   @unique
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  cafe Cafe[]
+}
+
+model Cafe {
+  id        String   @id @unique @default(cuid())
+  name      String
+  address   String
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  images    String
+  city      String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
