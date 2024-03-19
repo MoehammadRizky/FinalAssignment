@@ -1,4 +1,5 @@
 "use client";
+import { POST } from "@/app/api/v1/cafes/route";
 import { useState } from "react";
 import React from "react";
 
@@ -15,8 +16,25 @@ export const Login = () => {
       [event.target.name]: event.target.value,
     });
   }
+
+  async function handleLogin(formData) {
+    const { email, password } = loginData;
+
+    if (!email || !password) {
+      console.log("All Field must be filled!");
+      return;
+    }
+
+    const res = await fetch("/api/v1/auth/login", {
+      method: "POST",
+      body: JSON.stringify(loginData),
+    })
+    const data = await res.json()
+    console.log(data);
+  }
+
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center min-h-screen">
       <div className="relative flex flex-col m-6 space-y-8 rounded-[1px] bg-white shadow-2xl  md:flex-row md:space-y-0 overflow-hidden">
         {/* <!-- left side --> */}
         <div className="flex flex-col justify-center p-8 md:p-14">
@@ -49,7 +67,7 @@ export const Login = () => {
             <span className=" text-md text-black">Password</span>
             <input
               type="password"
-              name="pass"
+              name="password"
               id="pass"
               className="w-full p-2 border border-gray-300 rounded-md bg-white"
               onChange={handleChangeInput}
@@ -60,15 +78,18 @@ export const Login = () => {
               Forgot password
             </span>
           </div>
-          <button className="w-full bg-black text-white p-2 rounded-lg mb-6 hover:  hover:border hover:border-gray-300">
+          <button onClick={handleLogin} className="w-full bg-black text-white p-2 rounded-lg mb-6 hover:  hover:border hover:border-gray-300">
             Log in
           </button>
-          <button className="w-full border border-gray-300 text-md p-2 rounded-lg mb-6 hover:bg-black hover:text-white">
+          {/* <button className="w-full border border-gray-300 text-md p-2 rounded-lg mb-6 hover:bg-black hover:text-white">
             Log in with Google
-          </button>
+          </button> */}
           <div className="text-center text-gray-400">
-            <span className="font-bold text-black">
-              Dont have an account? Sign up{" "}
+            <span className="font-bold text-black  ">
+              Dont have an account?{" "}
+              <a className=" hover: text-green-700" href="">
+                Sign Up!
+              </a>{" "}
             </span>
           </div>
         </div>
