@@ -4,7 +4,7 @@ export async function POST(req) {
     const formData = await req.formData()
 
     const userName = formData.get("userName")
-    const gmail = formData.get("gmail")
+    const email = formData.get("email")
     const password = formData.get("password")
 
 

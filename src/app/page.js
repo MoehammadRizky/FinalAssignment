@@ -1,7 +1,7 @@
-import Page from "./register/page";
+import Register from "@/components/auth/register";
 
-export default function Home() {
+export default function Page() {
   return (
-    <Page />
+    <Register />
   );
 }
