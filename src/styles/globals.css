@@ -3,10 +3,11 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply max-w-screen-sm mx-auto
+  button {
+    @apply btn w-full  btn-primary;
   }
-  input, textarea, button {
-    @apply block
+
+  input {
+    @apply input w-full input-bordered;
   }
 }
