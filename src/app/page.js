@@ -2,6 +2,6 @@ import Register from "@/components/auth/register";
 
 export default function Page() {
   return (
-  <div>Homepage</div>
+  <div>Homepage staging</div>
   );
 }
