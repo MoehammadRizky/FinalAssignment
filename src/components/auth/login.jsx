@@ -87,7 +87,7 @@ export const Login = () => {
           <div className="text-center text-gray-400">
             <span className="font-bold text-black  ">
               Dont have an account?{" "}
-              <a className=" hover: text-green-700" href="">
+              <a className=" hover: text-green-700" href="/register">
                 Sign Up!
               </a>{" "}
             </span>
