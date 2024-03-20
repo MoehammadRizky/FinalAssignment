@@ -91,7 +91,7 @@ export const Register = () => {
           </button> */}
           <div className="text-center text-gray-400">
             <span className="font-bold text-black">
-              Already have an account? <a className=" hover: text-green-700" href="">Log In!</a>{" "}
+              Already have an account? <a className=" hover: text-green-700" href="/login">Log In!</a>{" "}
             </span>
           </div>
         </div>
