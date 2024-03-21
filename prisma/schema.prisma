@@ -25,13 +25,14 @@ model User {
 }
 
 model Cafe {
-  id        String   @id @unique @default(cuid())
-  name      String
-  address   String
-  userId    String
-  user      User     @relation(fields: [userId], references: [id])
-  images    String
-  city      String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id           String   @id @unique @default(cuid())
+  name         String
+  address      String
+  link_address String
+  userId       String
+  user         User     @relation(fields: [userId], references: [id])
+  images       String
+  city         String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }
