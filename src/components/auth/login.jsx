@@ -1,6 +1,6 @@
 "use client";
 import { POST } from "@/app/api/v1/cafes/route";
-import {Router} from "next/navigation";
+import { Router } from "next/navigation";
 import { useState } from "react";
 import { Toaster } from "react-hot-toast";
 
@@ -20,7 +20,6 @@ export const Login = () => {
 
   const router = useRouter();
 
-  
   async function handleLogin(formData) {
     const { email, password } = loginData;
 

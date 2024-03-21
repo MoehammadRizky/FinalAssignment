@@ -1,7 +1,7 @@
-export default function Home() {
+import Register from "@/components/auth/register";
+
+export default function Page() {
   return (
-    <main className="p-8">
-      Hello World
-    </main>
+  <div>Homepage staging</div>
   );
 }

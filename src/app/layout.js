@@ -4,8 +4,8 @@ import "@/styles/globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "My Devscale App",
-  description: "Beautifully made using DaisyUI",
+  title: "My App",
+  description: "TempatNugas",
 };
 
 export default function RootLayout({ children }) {
