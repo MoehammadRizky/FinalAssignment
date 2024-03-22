@@ -1,8 +1,8 @@
 "use client";
 import { POST } from "@/app/api/v1/cafes/route";
-import { Router } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { Toaster } from "react-hot-toast";
+import { toast } from "react-hot-toast";
 
 export const Login = () => {
   const [loginData, setLoginData] = useState({
@@ -92,7 +92,7 @@ export const Login = () => {
           </div>
           <button
             onClick={handleLogin}
-            className="w-full bg-black text-white p-2 rounded-lg mb-6 hover:  hover:border hover:border-gray-300"
+            className="w-full bg-black text-white p-2 rounded-lg mb-6 hover:border hover:border-gray-300"
           >
             Log in
           </button>

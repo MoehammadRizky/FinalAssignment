@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 @layer base {
-  button {
+  /* button {
     @apply btn w-full  btn-primary;
-  }
+  } */
 
   input {
     @apply input w-full input-bordered;
